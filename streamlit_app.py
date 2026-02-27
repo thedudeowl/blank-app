@@ -34,6 +34,6 @@ hist_values = np.histogram(
 st.bar_chart(hist_values)
 
 st.subheader(f'Map of all pickups at {hour_to_filter}:00')
-st.map(filtered_data)
+st.map(data)
 
 
