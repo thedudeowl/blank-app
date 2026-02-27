@@ -31,10 +31,9 @@ if st.checkbox('Show raw data'):
 
 if st.checkbox('Show bar chart'):
   st.subheader('Number of pickups by hour')
-
-hist_values = np.histogram(
-  data[DATE_COLUMN].dt.hour, bins=24, range=(0,24))[0]
-st.bar_chart(hist_values)
+  hist_values = np.histogram(
+    data[DATE_COLUMN].dt.hour, bins=24, range=(0,24))[0]
+  st.bar_chart(hist_values)
 
 if st.checkbox('Show map'):
   hour_to_filter = st.slider('hour', 0, 23, 17)
