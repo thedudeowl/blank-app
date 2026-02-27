@@ -39,6 +39,14 @@ def calculate_sharpe_ratio(returns, risk_free_rate=0.02):
 
 def calculate_sortino_ratio(returns, risk_free_rate=0.02):
     portfolio_return = returns.mean().mean()
+
+sharpe_ratio = calculate_sharpe_ratio(returns_data)
+sortino_ratio = calculate_sortino_ratio(returns_data)
+
+st.subheader("Performance Metrics")
+st.write(f"Sharpe Ratio: {sharpe_ratio:.2f}")
+st.write(f"Sortino Ratio: {sortino_ratio:.2f}")
+
     downside_returns = returns[returns < 0]
     downside_deviation = downside_returns.std().mean()
     return (portfolio_return - risk_free_rate) / downside_deviation
