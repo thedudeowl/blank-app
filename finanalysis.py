@@ -52,4 +52,15 @@ st.subheader("Performance Metrics")
 st.write(f"Sharpe Ratio: {sharpe_ratio:.2f}")
 st.write(f"Sortino Ratio: {sortino_ratio:.2f}")
 
+import numpy as np
+def portfolio_optimization(returns):
+    return np.ones(len(returns.columns)) / len(returns.columns)
+
+
+optimal_weights = portfolio_optimization(returns_data)
+
+st.subheader("Portfolio Optimization")
+st.write("Optimal Portfolio Weights:")
+for ticker, weight in zip(tickers, optimal_weights):
+    st.write(f"{ticker}: {weight:.2%}")
 
